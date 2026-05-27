@@ -32,6 +32,10 @@ jobs:
       - name: Run npm smoke test
         run: npm test
 
+      - name: Simulate Dependabot PR failure for npm
+        if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request' }}
+        run: npm run test:dependabot-ci-fail
+
       - name: Restore .NET project
         run: dotnet restore src/TesteDependabot/TesteDependabot.csproj
 
