@@ -8,9 +8,9 @@ Este repositorio agora tem um laboratorio simples para estudar como o GitHub e o
 - Dependabot nao consegue processar a configuracao
 - Dependencia vulneravel gera alerta ou `security update`
 
-O baseline atual continua valido para `nuget` e `github-actions`. O primeiro cenario ativo preparado neste laboratorio e o de `npm` com falha controlada de CI.
+O laboratorio agora foi propositalmente quebrado em `npm` e `nuget` para reproduzir falhas reais de resolucao de dependencia.
 
-## Baseline saudavel
+## Baseline original
 
 Arquivos base:
 
@@ -25,19 +25,21 @@ Comportamento esperado do baseline:
 - manifests de `npm` e `nuget` sao validos
 - `Dependabot` pode analisar `npm`, `nuget` e `github-actions`
 
-## Cenario ativo 1: PR abre, mas o CI barra
+## Cenario ativo 1: PR abre, mas o CI barra por falha real
 
-Ecossistema:
+Ecossistemas:
 - `npm`
+- `nuget`
 
 Como foi preparado:
-- o workflow foi ajustado para rodar um teste de falha controlada em PRs automatizados do Dependabot
-- a falha e intencional e tem mensagem explicita para facilitar diagnostico
+- `package.json` usa uma versao inexistente de `axios`
+- `TesteDependabot.csproj` usa uma versao inexistente de `Newtonsoft.Json`
+- o workflow continua normal, sem condicao artificial para falhar
 
 Comportamento esperado:
 - o PR do Dependabot continua podendo abrir
-- o job de CI falha na etapa de `npm`
-- a mensagem deixa claro que e um bloqueio didatico do laboratorio, nao uma quebra acidental
+- o job de CI falha no `npm install` e/ou no `dotnet restore`
+- a falha e de infraestrutura de dependencia, como aconteceria em um projeto real
 
 Objetivo do cenario:
 - simular o caso em que o bot consegue propor a atualizacao, mas a validacao do projeto reprova o PR
@@ -92,6 +94,6 @@ Resultado esperado:
 
 Neste momento, o laboratorio esta preparado com:
 
-- baseline funcional do projeto minimo
+- baseline original documentado
 - documentacao dos cenarios
-- um cenario ativo de falha controlada para `npm`
+- um cenario ativo de falha real para `npm` e `nuget`

@@ -4,12 +4,10 @@
   "private": true,
   "description": "Repositorio minimo para validar Dependabot em npm, nuget e github-actions.",
   "scripts": {
-    "test": "node -e \"console.log('dependabot lab ok')\"",
-    "test:baseline": "node -e \"console.log('baseline ok')\"",
-    "test:dependabot-ci-fail": "node -e \"console.error('cenario npm: PR abriu, mas o CI deve falhar de forma controlada'); process.exit(1)\""
+    "test": "node -e \"console.log('dependabot lab ok')\""
   },
   "dependencies": {
-    "axios": "1.6.0"
+    "axios": "999.999.999"
   },
   "devDependencies": {
     "eslint": "8.57.0"
