@@ -1,0 +1,16 @@
+Push protection provider-pattern test payloads
+All values below are intentionally fake and are meant only for GitHub push protection experiments.
+
+[anthropic_api_key]
+# Based on Anthropic docs showing partial_key_hint values like sk-ant-api03-...
+ANTHROPIC_API_KEY=sk-ant-api03-R2D2TestValueForPushProtectionOnly1234567890ABCD
+
+[airtable_personal_access_token]
+# Airtable docs confirm PAT usage, but do not publish the full token format.
+# This entry uses a synthetic pat-prefixed token as a best-effort format approximation.
+AIRTABLE_PAT=patFakeAirtableTokenForPushProtectionOnly1234567890ABCDE
+
+[aws_access_key_pair]
+# GitHub docs note pair-matched AWS detection requires both values in the same file.
+AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
