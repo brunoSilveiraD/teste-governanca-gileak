@@ -1,0 +1,38 @@
+Push protection test payloads
+All values below are intentionally fake and for GitHub secret scanning tests only.
+
+[generic_private_key]
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCAm8wggJrAgEAAoGBAK7FakeValueOnly
+Q29kZXhUZXN0UGF5bG9hZEZha2VCYXNlNjRTdHJpbmdGb3JTY2FubmluZw==
+VGhpc0lzTm90QVJlYWxLZXlJdE9ubHlFeGlzdHNUb1RyaWdnZXJUZXN0cw==
+-----END PRIVATE KEY-----
+
+[openssh_private_key]
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEZmFrZQAAAAAAAAABAAAAlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAIEAqFakeOpenSshPrivateKeyPayloadForTestingOnlyDoNotUse
+QW5vdGhlckZha2VCYXNlNjRTZWdtZW50VG8gSGVscCBUZXN0IERldGVjdGlvbg==
+-----END OPENSSH PRIVATE KEY-----
+
+[rsa_private_key]
+-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQDCFakeRsaPrivateKeyForPushProtectionTestingOnly12345
+QmFzZTY0UGF5bG9hZFN0cmluZ1dpdGhOb1JlYWxDcnlwdG9ncmFwaGljVmFsdWU=
+QW5vdGhlckxpbmVPZkZha2VEYXRhVG9NYXRjaFJTRUZvcm1hdFRlc3Rpbmc=
+-----END RSA PRIVATE KEY-----
+
+[postgres_connection_string]
+postgres://demo_user:FakeP0stgresPass123!@db-test.example.internal:5432/sampledb
+
+[mysql_connection_url]
+mysql://demo_user:FakeMysqlPass456!@mysql-test.example.internal:3306/sampledb
+
+[mongodb_connection_string]
+mongodb://demo_user:FakeMongoPass789!@mongo-test.example.internal:27017/sampledb?authSource=admin
+
+[http_bearer_authentication_header]
+Authorization: Bearer fake_bearer_token_for_push_protection_test_abcdefghijklmnopqrstuvwxyz_1234567890
+
+[http_basic_authentication_header]
+Authorization: Basic ZGVtb191c2VyOkZha2VCYXNpY1Bhc3NfR2l0SHViX1Rlc3RfMTIzIQ==
