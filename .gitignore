@@ -1,1 +1,6 @@
 task.md
+node_modules/
+bin/
+obj/
+src/**/bin/
+src/**/obj/
