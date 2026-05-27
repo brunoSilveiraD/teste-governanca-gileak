@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - dev
+      - teste-dependabot
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run npm smoke test
+        run: npm test
+
+      - name: Restore .NET project
+        run: dotnet restore src/TesteDependabot/TesteDependabot.csproj
+
+      - name: Build .NET project
+        run: dotnet build src/TesteDependabot/TesteDependabot.csproj --configuration Release --no-restore
