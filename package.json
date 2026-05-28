@@ -7,7 +7,7 @@
     "test": "node -e \"console.log('dependabot lab ok')\""
   },
   "dependencies": {
-    "axios": "999.999.999"
+    "axios": "1.6.0"
   },
   "devDependencies": {
     "eslint": "8.57.0"

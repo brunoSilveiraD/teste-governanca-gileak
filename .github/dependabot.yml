@@ -3,17 +3,4 @@ updates:
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: weekly
-    target-branch: dev
-
-  - package-ecosystem: nuget
-    directory: /src/TesteDependabot
-    schedule:
-      interval: weekly
-    target-branch: dev
-
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: weekly
-    target-branch: dev
+      interval: daily
