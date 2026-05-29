@@ -10,6 +10,6 @@
     "axios": "1.16.1"
   },
   "devDependencies": {
-    "eslint": "10.4.0"
+    "eslint": "10.4.1"
   }
 }
